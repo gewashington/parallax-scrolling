@@ -1,32 +1,42 @@
-.App {
-  text-align: center;
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: bold;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 100%;
+  height: 400vh;
 }
 
-.App-link {
-  color: #61dafb;
+h2 {
+  font-size: 60px;
+  background-color: white;
+  padding: 8px 24px;
+  border-radius: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+div:nth-child(1) {
+  background-image: url('images/happycake.jpeg');
+  background-size: cover;
+}
+
+div:nth-child(2) {
+  background-color: maroon;
+}
+
+div:nth-child(3) {
+  background-image: url('images/teacake.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+div:nth-child(4) {
+  background-color: aquamarine;
 }

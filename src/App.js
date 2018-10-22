@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll)
+  };
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  };
+
+  handleScroll() {
+    let offset = window.pageYOffset;
+    document.getElementById('parallax').style.backgroundPositionY = offset * 0.7 + "px";
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <React.Fragment>
+        <div id="parallax" onScroll={this.handleScroll}>
+           <h2>Div 1</h2>
+        </div>
+        <div>
+          <h2>Div 2</h2>
+        </div>
+        <div>
+          <h2>Div 3</h2>
+        </div>
+        <div>
+          <h2>Div 4</h2>
+        </div>
+      </React.Fragment>
+
     );
   }
 }
